@@ -15,17 +15,6 @@ if(isset($_GET["search_query"]) && trim($_GET["search_query"]) != "") {
 
 $categories = $db->query($sql_query, $params)->fetchAll(PDO::FETCH_ASSOC);
 
-
-
-echo "<h1>Emuārs</h1>";
-
-echo "<form>";
-    echo "<input name='search_query' />";
-    echo "<button>Meklēt</button>";
-echo "</form>";
-
-
-
 echo "<ul>";
     foreach($categories as $categorie){
         echo "<li>" . $categorie["category_name"] . "</li>";

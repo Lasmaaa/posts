@@ -1,0 +1,21 @@
+:root{
+    --body: gray;
+    --text: white;
+}
+body{
+    background-color: var(--body);
+}
+h1{
+    display: flex;
+    justify-content: center;
+}
+form{
+    display: flex;
+    justify-content: center;
+}
+li{
+    background-color: var(--text);
+    margin: 4rem;
+    padding: 2em;
+    border-radius: 5rem;
+}

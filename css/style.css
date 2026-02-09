@@ -1,0 +1,35 @@
+:root{
+    --body: gray;
+    --text: black;
+    --ieraksti : white;
+}
+body{
+    background-color: var(--body);
+}
+.ieraksti{
+    background-color: var(--ieraksti);
+    color: var(--text);
+    border-radius: 2rem;
+    margin:2rem;
+    padding: 2rem;
+}
+.link{
+    text-decoration: none;
+    color: var(--text);
+}
+.nav{
+    background-color: var(--ieraksti);
+    padding: 2rem;
+    margin: 1rem;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+.virsraksts{
+    display: flex;
+    justify-content: center;
+}
+.form{
+    display: flex;
+    justify-content: center;
+}

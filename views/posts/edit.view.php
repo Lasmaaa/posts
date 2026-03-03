@@ -15,4 +15,11 @@
     <button>Saglabāt</button>
     </form>
 
+    <select name="category_id">
+    <?php foreach ($categories as $category) { ?>
+        <option value="<?= $category['id'] ?>">
+            <?= htmlspecialchars($category['category_name']) ?>
+        </option>
+    <?php } ?>
+
 <?php require "./views/components/footer.php";?>

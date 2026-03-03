@@ -3,5 +3,7 @@
       <a href="/" class = "link">Emuāra ieraksti</a>
       <a href="/about" class = "link">Par mums</a>
       <a href="/categories" class = "link">Kategorijas</a>
-      <a href="/create" class = "link">izveidot jaunu bloga ierakstu</a>  </nav>
+      <a href="/create" class = "link">izveidot jaunu bloga ierakstu</a>
+     <a href="/categories/create" class = "link">izveidot jaunu kategoriju</a>
+    </nav>
 </header>

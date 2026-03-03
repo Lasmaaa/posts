@@ -1,5 +1,6 @@
+
 <?php
-$sql_query = "SELECT * FROM posts";
+$sql_query = "SELECT * FROM categories";
 $params = [];
 
 if(isset($_GET["search_query"]) && trim($_GET["search_query"]) != "") {
@@ -7,6 +8,6 @@ if(isset($_GET["search_query"]) && trim($_GET["search_query"]) != "") {
     $params["search"] = "%" . $_GET["search_query"] . "%";
 }
 
-$posts = $db->query($sql_query, $params)->fetchAll(PDO::FETCH_ASSOC);
+$categories = $db->query($sql_query, $params)->fetchAll(PDO::FETCH_ASSOC);
 
-require "./views/posts/index.view.php";
+require "./views/categories/index.view.php";

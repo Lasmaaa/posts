@@ -1,5 +1,4 @@
-
-name: Publish the Website to cPanel
+name: Publish Website to cPanel
 
 on:
   push:
@@ -12,16 +11,16 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4  
+        uses: actions/checkout@v4
 
       - name: Deploy to FTP / cPanel
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server:   ${{ secrets.FTP_SERVER }}
+          server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-
           local-dir: ./
+
           exclude: |
             **/.git*
             **/.git*/**
@@ -31,9 +30,5 @@ jobs:
             **/.DS_Store
             **/Thumbs.db
             **/*.log
-            **/migration.sql          # ← you probably don't want this on production
-            text.txt                  # ← looks like test file
-            # add more if needed, e.g.:
-            # controllersPanel.yml
-            # **/tests/
-            # **/cache/
+            **/migration.sql
+            text.txt

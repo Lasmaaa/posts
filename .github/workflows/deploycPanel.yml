@@ -1,4 +1,5 @@
-name: Publish website to cPanel
+
+name: Publish the Website to cPanel
 
 on:
   push:
@@ -6,16 +7,33 @@ on:
       - main
 
 jobs:
-  ftp-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4  
 
-      - name: FTP Deploy
+      - name: Deploy to FTP / cPanel
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER }}
+          server:   ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+
+          local-dir: ./
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/**
+            .gitignore
+            **/node_modules/**
+            **/.DS_Store
+            **/Thumbs.db
+            **/*.log
+            **/migration.sql          # ← you probably don't want this on production
+            text.txt                  # ← looks like test file
+            # add more if needed, e.g.:
+            # controllersPanel.yml
+            # **/tests/
+            # **/cache/
